@@ -35,6 +35,7 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules('first_name', 'First name', 'required');
         $this->form_validation->set_rules('last_name', 'Last name', 'required');
         $this->form_validation->set_rules('email', 'Email', array('required','valid_email'));
+        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
 
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('header', $data); 
@@ -57,6 +58,7 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules('first_name', 'First name', 'required');
         $this->form_validation->set_rules('last_name', 'Last name', 'required');
         $this->form_validation->set_rules('email', 'Email', array('required','valid_email'));
+        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('header', $data); 
             $this->load->view('users/update', $data);
