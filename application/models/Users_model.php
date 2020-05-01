@@ -49,4 +49,17 @@ class Users_model extends CI_Model {
     {
         return $this->db->where('id', $user_id)->delete('users');
     }
+
+    public function view_user($user_id)
+    {
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'phone_number' => $this->input->post('phone_number')
+        );
+
+        $this->db->where('id', $user_id);
+        return $this->db->where('users', $data);
+    }
 }
